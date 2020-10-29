@@ -11,7 +11,7 @@ ENV JAVA_HOME /opt/jdk-15.0.1
 
 # Setting the environment
 ENV PATH /usr/share/logstash:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/jdk-11.0.5/bin:\$PATH
-RUN groupadd -g 1000 logstash && \
+RUN addgroup -gid 1000 logstash && \
     adduser -u 1000 -g 1000 -d /usr/share/logstash logstash
 WORKDIR /usr/share/logstash
 RUN chown -R 1000:0 /opt/jdk-15.0.1

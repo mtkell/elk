@@ -4,7 +4,7 @@ RUN apt-get update && apt-get upgrade -y
 
 # Setting the environment
 ENV PATH /usr/share/kibana:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:\$PATH
-RUN groupadd -g 1000 kibana && \
+RUN addgroup -gid 1000 kibana && \
     adduser -u 1000 -g 1000 -d /usr/share/kibana kibana
 WORKDIR /usr/share/kibana
 
